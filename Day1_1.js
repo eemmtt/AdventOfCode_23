@@ -36,7 +36,6 @@ const scanLRRL = (code) => {
     
     for (let li = 0; li <= code.length; li += 1) {
         ri = code.length - li;
-        //console.log("Left index:",li, "Right index:",ri);
 
         if (lmatch == 0){
             for (let len = 5; len >= 1; len -= 1){
@@ -62,7 +61,7 @@ const scanLRRL = (code) => {
 
 
 let result = input.data.reduce(
-    (total, element, i) => {
+    (total, element) => {
         let matches = scanLRRL(element);
         let combined = 10 * matches[0] + matches[1];
         return total + combined;
